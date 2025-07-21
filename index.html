@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Neon Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #444;
+    }
+
+    nav h1 {
+      color: #00ffcc;
+      font-weight: 600;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00ffcc;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .profile {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile img {
+      border: 4px solid #00ffcc;
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    .profile h2 {
+      margin-top: 20px;
+      font-size: 2rem;
+    }
+
+    .profile p {
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 60px 0;
+    }
+
+    .card {
+      background: #222;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px #00ffcc;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    .card i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #00ffcc;
+    }
+
+    .card span {
+      font-size: 1rem;
+    }
+
+    footer {
+      background: #111;
+      padding: 40px 20px;
+      text-align: center;
+      color: #aaa;
+    }
+
+    .socials {
+      margin: 20px 0;
+    }
+
+    .socials a {
+      color: #00ffcc;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #fff;
+    }
+
+    @media(max-width: 768px) {
+      .skills {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        border-radius: 20px;
+        width: 80%;
+        height: auto;
+        padding: 20px;
+      }
+    }
+    .footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00f7ff; /* Neon glow color */
+}
+
+.social-icons a:hover {
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+}  
+
+
+.about-section {
+  padding: 60px 20px;
+  color: #eee;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #0ff;
+}
+
+.about-section p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.about-btn {
+  margin-top: 30px;
+  padding: 12px 28px;
+  background: #0ff;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 0 0 15px #0ff, 0 0 25px #0ff inset;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin-left: 350px;
+}
+
+.about-btn:hover {
+  background: #000;
+  color: #0ff;
+  box-shadow: 0 0 25px #0ff, 0 0 40px #0ff inset;
+  transform: scale(1.05);
+}
+  
+
+.about-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.about-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>MyPortfolio</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Skills</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="profile">
+      <img src="assets/3 pic.jpg" alt="My Photo" />
+      <h2>Rizwan Aslam</h2>
+      <p>Frontend Developer | Creative Designer</p>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="card">
+      <i class="fas fa-paint-brush"></i>
+      <span>Logo Design</span>
+    </div>
+    <div class="card">
+      <i class="fas fa-code"></i>
+      <span>Web Design</span>
+    </div>
+    <div class="card">
+      <i class="fas fa-laptop-code"></i>
+      <span>Frontend Dev</span>
+    </div>
+    <div class="card">
+      <i class="fas fa-mobile-alt"></i>
+      <span>Responsive UI</span>
+    </div>
+<!-- Scroll Button
+<button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });" class="scroll-btn">
+  Show My Introduction
+<! Introduction Section -->
+<div>
+</button>
+<button class="about-btn" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+  About Me <i class="fas fa-arrow-down"></i>
+</button>
+<section id="about" class="about-section">
+  <p>
+      I'm a passionate frontend web developer with a creative mindset and a strong eye for design.
+    My journey began with a curiosity for how websites work, which soon turned into a deep passion
+    for crafting beautiful and user-friendly web interfaces. From experimenting with HTML and CSS
+    to mastering JavaScript and modern UI techniques, I’ve constantly pushed myself to grow and learn.
+    Each project I take on is not just code—it's a chance to bring ideas to life through clean,
+    responsive, and interactive design. I'm driven by challenges, inspired by creativity,
+    and always eager to build something that leaves a lasting impression.
+  </p>
+</section>
+</div>
+
+
+
+
+  </section>
+
+
+    
+    <footer class="footer">
+        <p>© 2025 Rizwan Aslam</p>
+  <div class="social-icons">
+    <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+
+
+<script>
+  window.addEventListener('scroll', function() {
+    const about = document.querySelector('.about-section');
+    const rect = about.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      about.classList.add('visible');
+    }
+  });
+</script>
+
+</body>
+</html>
